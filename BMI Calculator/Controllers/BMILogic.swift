@@ -6,16 +6,35 @@
 //  Copyright © 2023 Angela Yu. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class BMILogic {
-    var bmi: Float?
+    
+    var bmi: BMI?
     
     func calculateBMI(height: Float, weight: Float) {
-        bmi = weight / pow(height, 2)
+        let bmiValue = weight / pow(height, 2)
+        if bmiValue < 18.5 {
+            bmi = BMI(value: bmiValue, advice: "Eat more pies", color: .cyan)
+        } else if bmiValue > 18.5 && bmiValue < 24.9 {
+            bmi = BMI(value: bmiValue, advice: "Fit as a fiddle!", color: .green)
+        } else if bmiValue > 24.9 {
+            bmi = BMI(value: bmiValue, advice: "Eat less pies", color: .red)
+        }
     }
     
     func getBMI() -> String {
-        return String(format: "%.2f", bmi!)
+        return String(format: "%.2f", bmi?.value ?? 0.0)
     }
+    
+    func getAdvice() -> String {
+        guard let bmi = bmi else { return "" }
+        return bmi.advice
+    }
+    
+    func getColor() -> UIColor {
+        guard let bmi = bmi else { return .white }
+        return bmi.color
+    }
+    
 }

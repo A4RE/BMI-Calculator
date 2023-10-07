@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -194,7 +195,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wMZ-LG-Y4P"/>
-                        <color key="backgroundColor" red="0.19980379940000001" green="0.48169642689999997" blue="0.77313679459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="tintColor"/>
                         <constraints>
                             <constraint firstItem="CO5-IF-rJM" firstAttribute="bottom" secondItem="wMZ-LG-Y4P" secondAttribute="bottom" id="3t0-T6-C7A"/>
                             <constraint firstItem="I5P-Pc-Lq3" firstAttribute="centerY" secondItem="A2l-zF-O8p" secondAttribute="centerY" id="7u5-hz-utT"/>
@@ -209,6 +210,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ovw-d0-lbs"/>
                     <connections>
+                        <outlet property="adviceLabel" destination="9IV-CT-mxw" id="R1H-Fg-u2L"/>
                         <outlet property="resultLabel" destination="VU9-2W-Sd5" id="g2e-1C-nNW"/>
                     </connections>
                 </viewController>
@@ -220,5 +222,8 @@
     <resources>
         <image name="calculate_background" width="375" height="812"/>
         <image name="result_background" width="375" height="812"/>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

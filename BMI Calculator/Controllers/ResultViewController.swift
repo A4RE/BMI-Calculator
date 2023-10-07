@@ -10,13 +10,16 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
-    var bmiValue: String?
+    @IBOutlet weak var adviceLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
+    var bmiValue: String?
+    var adviceValue: String?
+    var colorValue: UIColor?
     override func viewDidLoad() {
         super.viewDidLoad()
         resultLabel.text = bmiValue
-        
-
+        adviceLabel.text = adviceValue
+        view.backgroundColor = colorValue
     }
     @IBAction func goBackButton(_ sender: UIButton) {
         dismiss(animated: true)

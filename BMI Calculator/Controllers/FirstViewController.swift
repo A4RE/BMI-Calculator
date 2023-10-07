@@ -19,6 +19,7 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        bmiLogic.getBMI()
     }
     
     
@@ -47,6 +48,8 @@ class FirstViewController: UIViewController {
         if segue.identifier == "resultVC" {
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.bmiValue = bmiLogic.getBMI()
+            destinationVC.adviceValue = bmiLogic.getAdvice()
+            destinationVC.colorValue = bmiLogic.getColor()
         }
     }
     
