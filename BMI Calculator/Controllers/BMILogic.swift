@@ -9,13 +9,13 @@
 import Foundation
 
 class BMILogic {
-    var bmi: Float = 0.0
+    var bmi: Float?
     
     func calculateBMI(height: Float, weight: Float) {
         bmi = weight / pow(height, 2)
     }
     
     func getBMI() -> String {
-        return String(format: "%.2f", bmi)
+        return String(format: "%.2f", bmi!)
     }
 }
